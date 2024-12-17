@@ -22,8 +22,13 @@
                 <td th:text="${employee.address}"></td>
                 <td th:text="${employee.jobTitle}"></td>
                 <td th:text="${employee.department}"></td>
-                <td><a href="@{employee-detail/{id}/details(id=${employee.id})}">Edit</a></td>
-                <td><a href="@{employee-detail/{id}/delete(id=${employee.id})}">Delete</a></td>
+                <td><a th:href="@{employees/{id}/details(id=${employee.id})}">Edit</a></td>
+                <td>
+                    <form th:action="@{employees/{id}/delete(id=${employee.id})}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
