@@ -22,6 +22,8 @@
                 <td th:text="${employee.address}"></td>
                 <td th:text="${employee.jobTitle}"></td>
                 <td th:text="${employee.department}"></td>
+                <td><a href="@{employee-detail/{id}/details(id=${employee.id})}">Edit</a></td>
+                <td><a href="@{employee-detail/{id}/delete(id=${employee.id})}">Delete</a></td>
             </tr>
         </tbody>
     </table>
